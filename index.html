@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Team Vignaraja</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Splash Screen -->
+  <div id="splash">
+    <img src="C:/Users/prasa/Downloads/logo-removebg-preview.png" class="splash-logo" alt="Logo">
+  </div>
+
+  <!-- Login Page -->
+  <div id="loginPage" class="page hidden">
+    <h1>Welcome to Team Vignaraja</h1>
+    <img src="C:/Users/prasa/Downloads/logo-removebg-preview.png" class="big-logo" alt="Logo">
+
+    <input type="text" id="nameInput" placeholder="Enter Your Name">
+    <div class="password-box">
+      <input type="password" id="passwordInput" placeholder="Enter Password">
+      <button type="button" onclick="togglePassword()">👁️</button>
+    </div>
+    <input type="text" id="phoneInput" placeholder="Enter 10-digit Mobile Number (First time only)">
+    <label>Upload Profile Image (First time only)</label>
+    <input type="file" id="profileImgInput" accept="image/*">
+    <button class="btn green" onclick="login()">Login / Register</button>
+
+    <h3>Admin Login</h3>
+    <input type="text" id="adminName" placeholder="Admin Name">
+    <input type="password" id="adminPass" placeholder="Admin Password">
+    <button class="btn red" onclick="adminLogin()">Login as Admin</button>
+
+    <p id="loginMsg"></p>
+  </div>
+
+  <!-- Dashboard -->
+  <div id="app" class="hidden page">
+    <header>
+      <h2 id="vaultTitle">Team Vignaraja's Pocket</h2>
+      <img src="C:/Users/prasa/Downloads/logo-removebg-preview.png" class="small-logo" alt="Logo">
+      <button id="menuBtn" onclick="toggleMenu()">☰</button>
+    </header>
+
+    <marquee>TEAM VIGNARAJA</marquee>
+    <h3>Total Vault: ₹<span id="totalVault">0</span></h3>
+    <div id="timer"></div>
+    <img src="C:/Users/prasa/Downloads/logo-removebg-preview.png" class="center-logo" alt="Logo">
+
+    <ul id="membersList"></ul>
+
+    <div class="address">
+      <p><b style="color:red;">We Team Vignaraja are owed to celebrate our festival with much gratitude and self confidence as no one will be affected through our acts Jai Ganesha -- TEAM VIGNARAJA</b></p>
+      <p><b style="color:red;">Bangarupalyam, Chittoor Dist, Andhra Pradesh 517416</b></p>
+    </div>
+  </div>
+
+  <!-- Side Menu -->
+  <div id="sideMenu">
+    <button onclick="goHome()">🏠 Home</button>
+    <button onclick="logout()">🚪 Logout</button>
+    <button onclick="deleteAccount()">🗑 Delete Account</button>
+    <button onclick="viewDates()">📅 Important Dates</button>
+    <button onclick="uploadGanesha()">🖼 Our Ganesha's</button>
+    <div id="ganeshaGallery"></div>
+
+    <div id="adminFeatures" class="hidden">
+      <h3>🔐 Admin Panel</h3>
+      <button onclick="adminMarkPending()">Change Paid ➝ Pending</button>
+      <button onclick="adminMarkPaid()">Change Pending ➝ Paid</button>
+      <button onclick="adminDeleteUser()">Delete User</button>
+      <input type="number" id="vaultInput" placeholder="Enter Vault Amount">
+      <button onclick="adminUpdateVault()">Update Vault</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
